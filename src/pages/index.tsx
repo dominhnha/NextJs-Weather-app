@@ -2,10 +2,22 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import { useAppDispatch, useAppSelector } from '@/hooks/redux.hook'
+import { useEffect } from 'react'
+import  { addWeatherUserThunkAction,Weather } from '@/redux/slices/WeatherSlices'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const dispatch = useAppDispatch();
+  const data= useAppSelector((state) => state.weather);
+  console.log(data);
+  
+  useEffect(() => {
+    dispatch(addWeatherUserThunkAction({cityName:"da nang"}) as any);
+    console.log("Type of",typeof (addWeatherUserThunkAction({cityName:"da nang"})))
+  }, [])
+
   return (
     <>
       <Head>

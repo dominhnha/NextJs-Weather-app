@@ -1,0 +1,29 @@
+.text-primary {
+    color: $primary !important;
+}
+.text-secondary{
+    color:$secondary;
+}
+
+.tooltip{
+    transition: all 0.5s ease !important;
+    color: $primary !important;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto ;
+}
+
+.btn-primary{
+    background-color: $primary ;
+    color: white !important;
+    &:hover{
+        opacity: 0.8;
+    }
+}
+
+// main{
+//     margin-top: 84px;
+    
+// }
